@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="arrow-back-outline" style="margin-left: 10px;" [routerLink]="['/login']"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="contenedor">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>¿Que tipo de usuario eres?</h2>
+        <div class="botones">
+          <ion-button class="btn" [routerLink]="['/register']" >Pasajero</ion-button> <br> <ion-button class="btn" [routerLink]="['/register-chofer']">Chofer</ion-button>
+        </div>
+      </div>
+    </div>  
+  </div>  
+</ion-content>

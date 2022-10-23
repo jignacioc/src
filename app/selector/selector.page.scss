@@ -1,0 +1,15 @@
+.contenedor{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.botones{
+    display: inline-flex;
+}
+.btn{
+    width: 100px;
+    transition: .1s ease all;
+}

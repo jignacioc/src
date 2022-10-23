@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-icon name="arrow-back-outline" style="margin-left: 10px;" [routerLink]="['/selector']" class="back"></ion-icon>
+    </ion-buttons> 
+    <ion-title class="title">
+      ¡Registrate!
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+
+    <div class="imagen">
+      <img src="https://i.imgur.com/EBwXWqc.png" alt="">
+    </div>
+    <form action="">
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Nombre Completo:</ion-label>
+          <ion-input placeholder="Juan Alexander Pérez Gamboa" required type="text" [(ngModel)]="name" name="name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email:</ion-label>
+          <ion-input required placeholder="juan.alexander@gmail.com" type="email" [(ngModel)]="email" name="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Teléfono:</ion-label>
+          <ion-input required placeholder="941213472" type="tel" [(ngModel)]="phone" name="phone"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Auto:</ion-label>
+          <ion-input required placeholder="Suzuki Lambada" type="text" [(ngModel)]="car" name="car"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Patente:</ion-label>
+          <ion-input required placeholder="JJ-JJ-87" type="text" [(ngModel)]="patente" name="patente"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">N° Licencia:</ion-label>
+          <ion-input required placeholder="JK2DF3G23H" type="text" [(ngModel)]="licencia" name="licencia"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña:</ion-label>
+          <ion-input required type="password" [(ngModel)]="password" name="password"></ion-input>
+        </ion-item>
+      </ion-list>
+    </form>
+    <div class="btn-signup">
+      <ion-button type="submit" shape="round" (click)="registerChofer()" class="btn-signup2">Registrarse</ion-button>
+    </div>
+    <p class="link2">¿Ya tienes una cuenta? <br> Ingresa <a [routerLink]="['/login']">aquí</a></p>
+
+  </div>
+</ion-content>
+ 
+
+

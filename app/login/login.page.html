@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+  </ion-header>
+
+  <div id="container">
+    <div class="imagen">
+      <img src="https://i.imgur.com/EBwXWqc.png" alt="">
+    </div>
+    <ion-list>
+      <ion-item class="label">
+        <ion-label position="floating">Email.</ion-label>
+        <ion-input placeholder="Ingresa tu email" type="email" [(ngModel)]="email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item class="label">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input placeholder="Ingresa tu email" type="password" [(ngModel)]="password" name="password"></ion-input>
+      </ion-item>
+      <p class="link1"><a [routerLink]="['/forgot-password']">Olvidé mi contraseña</a></p>
+    </ion-list> 
+
+
+    <ion-button shape="round" class="btn-login" type="submit" (click)="login()">Ingresar</ion-button>
+    
+    <div class="links">
+      <p>¿No tienes una cuenta? <br> Crea una <a [routerLink]="['/selector']">aquí</a></p>
+    </div>
+
+  </div>
+</ion-content>

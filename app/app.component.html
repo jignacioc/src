@@ -1,0 +1,37 @@
+<ion-app>
+  <ion-router-outlet>
+    <ion-menu contentId="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Menú</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="ion-padding">
+        <!-- Un item -->
+        <ion-item button [routerLink]="['/home']" class="listaMenu">
+          <ion-icon slot="start" name="home-outline"></ion-icon> <ion-label> Inicio</ion-label>
+        </ion-item>
+        <!-- Un item -->
+
+        <!-- Un item -->
+        
+        <ion-item button (click)="gotoProfile()"  class="listaMenu">
+          <ion-icon slot="start" name="person-circle-outline"></ion-icon> <ion-label> Mi perfil</ion-label>
+        </ion-item>
+        <!-- Un item -->
+
+        <!-- Un item -->
+        <ion-item button (click)="logout()" class="listaMenu">
+          <ion-icon slot="start" name="log-out-outline"></ion-icon> <ion-label> Cerrar sesión</ion-label>
+        </ion-item>
+        <!-- Un item -->
+      </ion-content>
+      
+    </ion-menu>
+
+    <div class="ion-page" id="main-content">
+    </div>
+    
+  </ion-router-outlet>
+</ion-app>
