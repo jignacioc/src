@@ -4,9 +4,11 @@ import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { take, map, tap } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
+export class NoLoginGuard implements CanActivate {
 
-export class AuthGuard implements CanActivate {
 
   constructor(
     private auth: AuthService,
@@ -17,16 +19,13 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     var estado = localStorage.getItem('estado');
-    if(estado){
-      console.log("Entra");
+    if(!estado){
+      console.log("entra");
       return true;
     }else{
-      console.log("No entra");
-      this.router.navigate(['/login']);
+      console.log("no entra");
+      this.router.navigate(['/home']);
       return false;
-
     }
   }
-
-
 }

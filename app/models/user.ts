@@ -6,6 +6,6 @@ export interface User {
     userCar: string;
     userPatente: string;
     userLicencia: string;
-    userStatus: string;
+    status: string;
     createdAt: number;
 }

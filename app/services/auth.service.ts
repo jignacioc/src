@@ -45,8 +45,8 @@ export class AuthService
       showBackdrop: true
     });    
     
-    loading.present();
-    
+    loading.present();  
+
     this.afauth.setPersistence(firebase.default.auth.Auth.Persistence.LOCAL).then(() => {
       this.afauth.signInWithEmailAndPassword(email, password).then((data) => {
         if (!data.user.emailVerified){
@@ -55,11 +55,15 @@ export class AuthService
           this.afauth.signOut();
         } else {
           loading.dismiss();
+          localStorage.setItem('estado',JSON.stringify('true'));
           this.router.navigate(['/home']);
+          window.location.reload();
+
         }
       })
       .catch(error => {
         this.toast(error.message, 'danger');
+        loading.dismiss();
       })
     })
     .catch(error => {

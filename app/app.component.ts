@@ -19,10 +19,11 @@ export class AppComponent {
 
 
   logout(){
-    this.auth.signOut()
+    this.auth.signOut();
+    localStorage.removeItem('estado');
   }
 
   gotoProfile(){
-    this.router.navigate(['/profile'])
+    this.router.navigate(['/profile']);
   }
 }
