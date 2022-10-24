@@ -49,6 +49,15 @@ const routes: Routes = [
     loadChildren: () => import('./register-chofer/register-chofer.module').then( m => m.RegisterChoferPageModule)
   },
   {
+    path: 'maps',
+    loadChildren: () => import('./maps/maps.module').then( m => m.MapsPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'coords',
+    loadChildren: () => import('./coords/coords.module').then( m => m.CoordsPageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./page-not-found/page-not-found.module').then( m => m.PageNotFoundPageModule)
   }

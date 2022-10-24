@@ -32,6 +32,10 @@ import { AuthGuard } from './guards/auth.guard'
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
 
+// geolication
+
+import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -50,6 +54,7 @@ import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
     AuthService,
     AuthGuard,
     StatusBar,
+    Geolocation,
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy
   }],
   bootstrap: [AppComponent],
