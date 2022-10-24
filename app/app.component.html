@@ -25,6 +25,12 @@
           <ion-icon slot="start" name="map-outline"></ion-icon> <ion-label> Mapa</ion-label>
         </ion-item>
 
+
+        <!-- Un item -->
+        <ion-item button [routerLink]="['/admin']" class="listaMenu">
+          <ion-icon slot="start" name="log-out-outline"></ion-icon> <ion-label> Administración</ion-label>
+        </ion-item>
+        
         <!-- Un item -->
         <ion-item button (click)="logout()" class="listaMenu">
           <ion-icon slot="start" name="log-out-outline"></ion-icon> <ion-label> Cerrar sesión</ion-label>

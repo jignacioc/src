@@ -15,6 +15,7 @@ export class RegisterPage implements OnInit {
   email: string;
   phone: string;
   password: string;
+  status: string= '0';
   type: string = 'Pasajero';
   
   constructor(
@@ -50,6 +51,7 @@ export class RegisterPage implements OnInit {
           'userEmail': this.email,
           'userPhone': this.phone,
           'userType': this.type,
+          'status': this.status,
           'createdAt': Date.now()
         })
         .then(() => {

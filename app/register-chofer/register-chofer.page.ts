@@ -19,6 +19,7 @@ export class RegisterChoferPage implements OnInit {
   patente: string;
   licencia: string;
   type: string = 'Chofer';
+  status: string= '0';
   password: string;
 
   constructor
@@ -31,7 +32,7 @@ export class RegisterChoferPage implements OnInit {
   ) { }
 
   ngOnInit() {
-  }
+  } 
 
   async registerChofer()
   {
@@ -57,6 +58,7 @@ export class RegisterChoferPage implements OnInit {
           'userPatente': this.patente,
           'userLicencia': this.licencia,
           'userType': this.type,
+          'status': this.status,
           'createdAt': Date.now()
         })
         .then(() => {

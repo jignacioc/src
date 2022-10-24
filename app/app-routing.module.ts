@@ -54,8 +54,8 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'coords',
-    loadChildren: () => import('./coords/coords.module').then( m => m.CoordsPageModule)
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
   },
   {
     path: '**',

@@ -21,40 +21,53 @@ export class MapsPage implements OnInit {
 
   map = null;
   
-  lat;
-  lng; 
+  lat: any;
+  lng: any; 
   
-  private latitud = this.geo.getCurrentPosition({timeout: 10000, enableHighAccuracy: true}).then((res) => { res.coords.latitude;});
-  private longitud = this.geo.getCurrentPosition({timeout: 10000, enableHighAccuracy: true}).then((res) => { res.coords.longitude;});;
+  private latitud;
+  private longitud;
 
   constructor(
     private geo: Geolocation
-  ) { }
-
-  ngOnInit() {
-    this.loadMap();
+  ) 
+  {
+    this.dondeEstoy();
   }
 
+  ngOnInit() {
+  }
 
+  dondeEstoy(){
+    this.geo.getCurrentPosition({
+      timeout: 10000,
+      enableHighAccuracy: true
+    }).then((res) => {
+      this.lat = res.coords.latitude;
+      this.lng = res.coords.longitude;
+      this.loadMap(this.lat,this.lng);
+    });
+  }
 
-  loadMap() {
+  loadMap(lt,lg) {
+
     // create a new map by passing HTMLElement
     const mapEle: HTMLElement = document.getElementById('map');
+
     // create LatLng object
-    const myLatLng = {lat: -33.5172636, lng: -70.5991192};
+    const myLatLng = {lat: lt,lng: lg};
     
     // create map
     this.map = new google.maps.Map(mapEle, {
       center: myLatLng,
       zoom: 12
-    });
+    }); 
   
     google.maps.event.addListenerOnce(this.map, 'idle', () => {
       mapEle.classList.add('show-map');
       const marker = {
         position: {
-          lat: -33.5172636,
-          lng: -70.5991192
+          lat: this.lat,
+          lng: this.lng
         },
         title: 'punto uno'
       };

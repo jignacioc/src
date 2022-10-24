@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CoordsPageRoutingModule } from './coords-routing.module';
+import { AdminPageRoutingModule } from './admin-routing.module';
 
-import { CoordsPage } from './coords.page';
+import { AdminPage } from './admin.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CoordsPageRoutingModule
+    AdminPageRoutingModule
   ],
-  declarations: [CoordsPage]
+  declarations: [AdminPage]
 })
-export class CoordsPageModule {}
+export class AdminPageModule {}
