@@ -25,6 +25,13 @@
           <ion-label position="stacked">Teléfono: </ion-label>
           <ion-input required type="tel" [(ngModel)]="phone" name="phone"></ion-input>
         </ion-item>
+      </ion-list>
+    </form>
+  </ion-card>
+  
+  <ion-card *ngIf="user?.userType === 'Chofer' ">
+    <form action="">
+      <ion-list>
         <ion-item>
           <ion-label position="stacked">Auto: </ion-label>
           <ion-input required type="tel" [(ngModel)]="car" name="car"></ion-input>
@@ -37,13 +44,9 @@
           <ion-label position="stacked">N° De licencia: </ion-label>
           <ion-input required type="tel" [(ngModel)]="licencia" name="licencia"></ion-input>
         </ion-item>
-        <ion-item disabled>
-          <ion-label position="stacked">Contraseña: </ion-label>
-          <p>Dirigete a la sección "Olvidé mi contraseña para" reestablecerla.</p>
-        </ion-item>
       </ion-list>
     </form>
   </ion-card>
-  <ion-button type="submit" shape="round" (click)="updateProfile()" style="display: flex; justify-content: center;">Guardar</ion-button>
 
+  <ion-button type="submit" shape="round" (click)="updateProfile()" style="display: flex; justify-content: center;">Guardar</ion-button>
 </ion-content>

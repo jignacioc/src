@@ -4,12 +4,15 @@
         <ion-icon name="arrow-back-outline" style="margin-left: 10px;" [routerLink]="['/home']" class="back"></ion-icon>
     </ion-buttons> 
     <ion-title class="title">
-      Mapa
+      Comentarios
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div id="map">
-  </div>
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let comment of comments">
+      <h3>{{comment.id}} - {{comment.email}}</h3> <br>{{comment.body}}
+    </button>
+  </ion-list>
 </ion-content>

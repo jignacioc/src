@@ -13,14 +13,21 @@
 
   <ion-card>
     <ion-card-content>
+      <h1>Datos del usuario.</h1> <br>
       <h2>Nombre: {{user?.userName}}</h2>
       <h2>Email: {{user?.userEmail}}</h2>
       <h2>Teléfono: {{user?.userPhone}}</h2>
       <h2>Tipo de cuenta: {{user?.userType}}</h2>
+      <h2>Fecha de creación: {{user?.createdAt | date }}</h2>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="user?.userType === 'Chofer' ">
+    <ion-card-content>
+      <h1>Datos del vehiculo.</h1> <br>
       <h2>Auto: {{user?.userCar}}</h2>
       <h2>Patente: {{user?.userPatente}}</h2>
       <h2>N° Licencia: {{user?.userLicencia}}</h2>
-      <h2>Fecha de creación: {{user?.createdAt | date }}</h2>
     </ion-card-content>
   </ion-card>
   <ion-button expand="block" shape="round" (click)="editProfile()" class="btn-edit"> Edit Profile </ion-button>

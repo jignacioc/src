@@ -20,6 +20,7 @@ export class RegisterChoferPage implements OnInit {
   licencia: string;
   type: string = 'Chofer';
   status: string= '0';
+  domicilio: string;
   password: string;
 
   constructor
@@ -59,10 +60,11 @@ export class RegisterChoferPage implements OnInit {
           'userLicencia': this.licencia,
           'userType': this.type,
           'status': this.status,
+          'domicilio': this.domicilio,
           'createdAt': Date.now()
         })
         .then(() => {
-          this.toast('Registro exitoso. Por favor verifica tu email ;)', 'Exitoso');
+          this.toast('¡Registro exitoso! Verifica tu email y espera la validación del administrador.', 'success');
           this.router.navigate(['/login']);
         })
         .catch(error => {

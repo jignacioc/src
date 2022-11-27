@@ -36,6 +36,11 @@ import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
 
 import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
 
+// REST API
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { CommentsService } from './apis/comments.service';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -47,16 +52,17 @@ import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    AngularFireStorageModule
-
+    AngularFireStorageModule,
+    HttpClientModule
   ],
   providers: [
     AuthService,
     AuthGuard,
     StatusBar,
     Geolocation,
-    {provide: RouteReuseStrategy, useClass: IonicRouteStrategy
-  }],
+    {provide: RouteReuseStrategy, useClass: IonicRouteStrategy,
+  },
+  CommentsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

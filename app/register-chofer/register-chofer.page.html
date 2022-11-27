@@ -17,6 +17,7 @@
     </div>
     <form action="">
       <ion-list>
+        <h4 style="texto">Datos del Conductor</h4>
         <ion-item>
           <ion-label position="floating">Nombre Completo:</ion-label>
           <ion-input placeholder="Juan Alexander Pérez Gamboa" required type="text" [(ngModel)]="name" name="name"></ion-input>
@@ -30,6 +31,15 @@
           <ion-input required placeholder="941213472" type="tel" [(ngModel)]="phone" name="phone"></ion-input>
         </ion-item>
         <ion-item>
+          <ion-label position="floating">Domicilio:</ion-label>
+          <ion-input required placeholder="Calle Larga #1313" type="text" [(ngModel)]="domicilio" name="domicilio"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña:</ion-label>
+          <ion-input required type="password" [(ngModel)]="password" name="password"></ion-input>
+        </ion-item>
+        <h4 style="texto">Datos del Automovil</h4>
+        <ion-item>
           <ion-label position="floating">Auto:</ion-label>
           <ion-input required placeholder="Suzuki Lambada" type="text" [(ngModel)]="car" name="car"></ion-input>
         </ion-item>
@@ -40,10 +50,6 @@
         <ion-item>
           <ion-label position="floating">N° Licencia:</ion-label>
           <ion-input required placeholder="JK2DF3G23H" type="text" [(ngModel)]="licencia" name="licencia"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Contraseña:</ion-label>
-          <ion-input required type="password" [(ngModel)]="password" name="password"></ion-input>
         </ion-item>
       </ion-list>
     </form>

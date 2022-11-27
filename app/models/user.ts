@@ -7,5 +7,7 @@ export interface User {
     userPatente: string;
     userLicencia: string;
     status: string;
+    domicilio: string;
     createdAt: number;
+    userType: string;
 }

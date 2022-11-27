@@ -11,6 +11,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class ProfileEditPage implements OnInit 
 {
+  user: any;
   userId: string;
   name: string;
   email: string;
@@ -18,7 +19,7 @@ export class ProfileEditPage implements OnInit
   car: string;
   patente: string;
   licencia: string;
-
+  userType: string;
 
 
   constructor
@@ -33,6 +34,7 @@ export class ProfileEditPage implements OnInit
 
   ngOnInit() {
     this.auth.user$.subscribe(user => {
+      this.user = user;
       this.userId = user.userId;
       this.name = user.userName;
       this.email = user.userEmail;
@@ -40,8 +42,9 @@ export class ProfileEditPage implements OnInit
       this.car = user.userCar;
       this.patente = user.userPatente;
       this.licencia = user.userLicencia;
-      
+      this.userType = user.userType;
     })
+    
   }
 
   async updateProfile()

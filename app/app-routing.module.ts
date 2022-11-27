@@ -56,8 +56,9 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'admin',
-    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
+    path: 'comments',
+    loadChildren: () => import('./comments/comments.module').then( m => m.CommentsPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: '**',

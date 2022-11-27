@@ -35,15 +35,7 @@ export class LoginPage implements OnInit {
   }
 
   login()
-  { /*
-    if(this.email && this.password)
-    {
-      this.auth.signIn(this.email, this.password);
-    } else{
-      this.toast('Por favor, ingresa tu email y tu contraseña.', 'warning');
-    } 
-    */
-    
+  { 
     const path = 'user';
     const parametro = 'userEmail';
     const condicion = '==';
@@ -52,7 +44,7 @@ export class LoginPage implements OnInit {
     this.db.getCollectionQuery<User>(path,parametro,condicion,busqueda).subscribe(res=>{
       if(res){res.forEach((estado) => {
        if(estado.status=='0'){
-        alert('No puede ingresar.')
+        this.toast('Tu cuenta no está habilitada por un administrador.', 'warning');
        } else{
         if(this.email && this.password)
         {
