@@ -10,6 +10,11 @@
 </ion-header>
 
 <ion-content>
-  <div id="map">
-  </div>
+  <ion-item>
+    <ion-label position="floating">Destino</ion-label>
+    <ion-input placeholder="Reescribe el destino" [(ngModel)]="destination"></ion-input>
+  </ion-item>
+  <ion-button (click)="calculateRoute()" expand="full">Iniciar</ion-button>
+
+  <div id="map"></div>
 </ion-content>

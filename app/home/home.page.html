@@ -15,8 +15,24 @@
       <ion-title size="large" class="title"> TeLlevo APP</ion-title>
     </ion-toolbar>
   </ion-header>
-  
-  <div id="container">
+  <!-- PARA CHOFERES -->
+
+  <div id="container" *ngIf="user?.userType === 'Chofer' ">
+    <div class="contenedorviaje"></div>
+    <h1>¡Hola!</h1>
+    <ion-button [routerLink]="['/viaje']" color="warning">Nuevo Viaje</ion-button>
+  </div>
+
+  <!-- PARA PASAJEROS -->
+  <div id="container" *ngIf="user?.userType === 'Pasajero' ">
+    <div class="red" *ngIf="user?.userType === 'Pasajero' ">
+      <div class="box" *ngFor="let viaje of viajes">
+        <h2 id="destino">{{viaje.destino}}</h2>
+        <p>Asientos disponibles: {{ viaje.asientos}}</p>
+        <p>Valor del viaje: ${{ viaje.valor}} </p> <br>
+        <ion-button color="warning" [routerLink]="['/maps', viaje.viajeId]">Solicitar</ion-button>
+      </div>
+    </div>
   </div>
 
 </ion-content>

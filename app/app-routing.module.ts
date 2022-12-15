@@ -34,11 +34,6 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'change-password',
-    loadChildren: () => import('./change-password/change-password.module').then( m => m.ChangePasswordPageModule),
-    canActivate: [AuthGuard]
-  },
-  {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
@@ -51,7 +46,7 @@ const routes: Routes = [
     loadChildren: () => import('./register-chofer/register-chofer.module').then( m => m.RegisterChoferPageModule)
   },
   {
-    path: 'maps',
+    path: 'maps/:viajeId',
     loadChildren: () => import('./maps/maps.module').then( m => m.MapsPageModule),
     canActivate: [AuthGuard]
   },
@@ -61,10 +56,19 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'viaje',
+    loadChildren: () => import('./viaje/viaje.module').then( m => m.ViajePageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'editar/:viajeId',
+    loadChildren: () => import('./editar-viaje/editar-viaje.module').then( m => m.EditarViajePageModule),
+    canActivate: [AuthGuard]
+  },
+  {
     path: '**',
     loadChildren: () => import('./page-not-found/page-not-found.module').then( m => m.PageNotFoundPageModule)
   }
-
 ];
 
 @NgModule({
